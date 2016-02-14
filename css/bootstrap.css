@@ -4025,7 +4025,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-inverse {
   background-color: #18bc9c;
   border-color: #128f76;
-  background-image: url(/Content/header-background.jpg);
+  background-image: url(/images/header-background.jpg);
 }
 .navbar-inverse .navbar-brand {
   color: #ffffff;
