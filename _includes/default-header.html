@@ -12,7 +12,8 @@
     	</div>
     	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
     	  <ul class="nav navbar-nav">
-    	    {% for sitePage in site.pages %}
+          {% assign sitePages = site.pages | sort:"order" %}
+    	    {% for sitePage in sitePages %}
             {% if sitePage.title %}
             <li{% if page.url == sitePage.url %} class="active"{% endif %}>
               <a href="{{ site.baseurl }}{{ sitePage.permalink }}">{{ sitePage.title }}</a>
