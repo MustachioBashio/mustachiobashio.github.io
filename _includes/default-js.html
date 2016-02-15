@@ -1,25 +1,34 @@
-    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.mousewheel-3.0.6.pack.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox.pack.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-buttons.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-media.js"></script>
-    <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-thumbs.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-      	$(".fancybox").fancybox({
-      	  modal: true,
-      	  helpers: {
-      	    buttons: {}
-      	  }
-      	});
-      	$(".filter").on("click", function() {
-      	  var $this = $(this);
-      	  if (!$this.hasClass("active")) {
-      	    $(".filter").removeClass("active");
-      	    $this.addClass("active");
-      	    var $filter = $this.data("rel");
-      	    $filter == "all" ? $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() : $(".fancybox").fadeOut(0).filter(function() { return $(this).data("filter").indexOf($filter) > -1; }).attr("data-fancybox-group", $filter).fadeIn(1000);
-      	  }
-      	});
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.mousewheel-3.0.6.pack.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-buttons.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-media.js"></script>
+  <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-thumbs.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    	$(".fancybox").fancybox({
+    	  modal: true,
+    	  helpers: {
+    	    buttons: {}
+    	  }
+    	});
+    	$(".year-filter").on("click", function() {
+    	  var $this = $(this);
+    	  if (!$this.hasClass("active")) {
+    	    $(".year-filter").removeClass("active");
+    	    $this.addClass("active");
+    	    var $filter = $this.data("rel");
+    	    $filter == "all" ? $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() : $(".fancybox").fadeOut(0).filter(function() { return $(this).data("filter").indexOf($filter) > -1; }).attr("data-fancybox-group", $filter).fadeIn(1000);
+    	  }
+    	});
+      $(".category-filter").on("click", function() {
+        var $this = $(this);
+        if (!$this.hasClass("active")) {
+          $(".category-filter").removeClass("active");
+          $this.addClass("active");
+          var $filter = $this.data("rel");
+          $filter == "all" ? $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() : $(".fancybox").fadeOut(0).filter(function() { return $(this).data("filter").indexOf($filter) > -1; }).attr("data-fancybox-group", $filter).fadeIn(1000);
+        }
       });
-    </script>
+    });
+  </script>

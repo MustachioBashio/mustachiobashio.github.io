@@ -1,39 +1,39 @@
-    <a class="sr-only" href="#content">Skip navigation</a>
-    <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-      <div class="container">
-      	<div class="navbar-header">
-      	  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-      	  	<span class="sr-only">Toggle navigation</span>
-      	  	<span class="icon-bar"></span>
-      	  	<span class="icon-bar"></span>
-      	  	<span class="icon-bar"></span>
-      	  </button>
-      	  <a href="{{ site.baseurl }}/" class="navbar-brand">Mustachio Bashio</a>
-      	</div>
-      	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-      	  <ul class="nav navbar-nav">
-      	    {% for sitePage in site.pages %}
-              {% if sitePage.title %}
-                <li{% if page.url == sitePage.url %} class="active"{% endif %}>
-                  <a href="{{ site.baseurl }}{{ sitePage.permalink }}">{{ sitePage.title }}</a>
-                </li>
-              {% endif %}
-            {% endfor %}
-      	  </ul>
-      	  <ul class="nav navbar-nav navbar-right">
-      	  	<li>
-      	  	  <a href="https://twitter.com/mustachiobashio" target="_blank" class="nav-icon">
-      	  	  	<i class="icon icon-social-twitter"></i>
-      	  	  	<span class="label">Twitter</span>
-      	  	  </a>
-  	  	    </li>
-  	  	    <li>
-  	  	      <a href="https://facebook.com/MustachioBashioCleveland" target="_blank" class="nav-icon">
-  	  	        <i class="icon icon-social-facebook"></i>
-  	  	        <span class="label">Facebook</span>
-  	  	      </a>
-  	  	    </li>
-      	  </ul>
-      	</nav>
-      </div>
-    </header>
+  <a class="sr-only" href="#content">Skip navigation</a>
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container">
+    	<div class="navbar-header">
+    	  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+    	  	<span class="sr-only">Toggle navigation</span>
+    	  	<span class="icon-bar"></span>
+    	  	<span class="icon-bar"></span>
+    	  	<span class="icon-bar"></span>
+    	  </button>
+    	  <a href="{{ site.baseurl }}/" class="navbar-brand">Mustachio Bashio</a>
+    	</div>
+    	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+    	  <ul class="nav navbar-nav">
+    	    {% for sitePage in site.pages %}
+            {% if sitePage.title %}
+            <li{% if page.url == sitePage.url %} class="active"{% endif %}>
+              <a href="{{ site.baseurl }}{{ sitePage.permalink }}">{{ sitePage.title }}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+    	  </ul>
+    	  <ul class="nav navbar-nav navbar-right">
+    	  	<li>
+    	  	  <a href="https://twitter.com/mustachiobashio" target="_blank" class="nav-icon">
+    	  	  	<i class="icon icon-social-twitter"></i>
+    	  	  	<span class="label">Twitter</span>
+    	  	  </a>
+  	  	  </li>
+  	  	  <li>
+  	  	    <a href="https://facebook.com/MustachioBashioCleveland" target="_blank" class="nav-icon">
+  	  	    <i class="icon icon-social-facebook"></i>
+  	  	    <span class="label">Facebook</span>
+  	  	    </a>
+  	  	  </li>
+    	  </ul>
+    	</nav>
+    </div>
+  </header>
