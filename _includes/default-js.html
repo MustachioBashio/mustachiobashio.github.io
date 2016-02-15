@@ -4,31 +4,39 @@
   <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-buttons.js"></script>
   <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-media.js"></script>
   <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.fancybox-thumbs.js"></script>
-  <script type="text/javascript">
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+  <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+  <script>
     $(document).ready(function() {
-    	$(".fancybox").fancybox({
-    	  modal: true,
-    	  helpers: {
-    	    buttons: {}
-    	  }
-    	});
-    	$(".year-filter").on("click", function() {
-    	  var $this = $(this);
-    	  if (!$this.hasClass("active")) {
-    	    $(".year-filter").removeClass("active");
-    	    $this.addClass("active");
-    	    var $filter = $this.data("rel");
-    	    $filter == "all" ? $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() : $(".fancybox").fadeOut(0).filter(function() { return $(this).data("filter").indexOf($filter) > -1; }).attr("data-fancybox-group", $filter).fadeIn(1000);
-    	  }
-    	});
-      $(".category-filter").on("click", function() {
+      var $container = $("#isotope-container");
+      var filters = {};
+      $container.imagesLoaded(function() {
+        $container.isotope({
+          itemSelector: ".championItem",
+          layoutMode: "fitRows"
+        });
+      })
+
+      $(".filter-button-group").on("click", "button", function() {
         var $this = $(this);
-        if (!$this.hasClass("active")) {
-          $(".category-filter").removeClass("active");
-          $this.addClass("active");
-          var $filter = $this.data("rel");
-          $filter == "all" ? $(".fancybox").attr("data-fancybox-group", "gallery").not(":visible").fadeIn() : $(".fancybox").fadeOut(0).filter(function() { return $(this).data("filter").indexOf($filter) > -1; }).attr("data-fancybox-group", $filter).fadeIn(1000);
-        }
+        var $buttonGroup = $this.parents(".filter-button-group");
+        $buttonGroup.find(".active").removeClass("active");
+        $this.addClass("active");
+        var $filterGroup = $buttonGroup.attr("data-filter-group");
+        filters[$filterGroup] = $this.attr("data-filter");
+        var filterValue = concatValues(filters);
+        $container.isotope({
+          filter: filterValue
+        });
       });
+
+      function concatValues(obj) {
+        var value = "";
+        for (var prop in obj) {
+          value += obj[prop];
+        }
+
+        return value;
+      }
     });
   </script>
