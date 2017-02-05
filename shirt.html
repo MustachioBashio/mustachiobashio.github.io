@@ -12,9 +12,11 @@ order: 2
     <div class="col-md-3">
       <div class="bs-sidebar" role="complementary">
         <ul class="nav bs-sidenav">
+          {% comment %}
           <li>
             <a href="#thanks">Thank You</a>
           </li>
+          {% endcomment %}
           {% comment %}
           <li>
             <a href="#purchase">Purchase</a>
@@ -23,10 +25,14 @@ order: 2
             <a href="#design">2016 Design</a>
           </li>
           {% endcomment %}
+          <li>
+            <a href="#comingsoon">Coming Soon</a>
+          </li>
         </ul>
       </div>
     </div>
     <div class="col-md-9" role="main">
+      {% comment %}
       <div class="bs-docs-section">
         <div class="page-header">
           <h1 id="thanks">Thank You</h1>
@@ -35,6 +41,7 @@ order: 2
           Thank you to everyone who made Mustachio Bashio 2016 a success!
         </p>
       </div>
+      {% endcomment %}
       {% comment %}
       <div class="bs-docs-section">
         <div class="page-header">
@@ -88,6 +95,14 @@ order: 2
         <img src="/images/shirt/2016/back.png" alt="2016 Shirt Back" class="img-responsive img-thumbnail" style="width: 600px;" />
       </div>
       {% endcomment %}
+      <div class="bs-docs-section">
+        <div class="page-header">
+          <h1 id="comingsoon">Coming Soon!</h1>
+        </div>
+        <p class="lead">
+          Stay tuned for the 2017 Design!
+        </p>
+      </div>
     </div>
   </div>
 </div>
